@@ -1,0 +1,1020 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAIB4D — CLAIM BONUS NEW MEMBER</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Playfair+Display:wght@400;700;900&display=swap');
+
+        :root {
+            --gold: #d4af37;
+            --gold-light: #f4d03f;
+            --gold-pale: #fff8dc;
+            --gold-dark: #b8860b;
+            --black: #0a0a0a;
+            --black-light: #1a1a1a;
+            --black-soft: #2a2a2a;
+        }
+
+        * { box-sizing: border-box; }
+        body { margin: 0; overflow-x: hidden; font-family: 'Playfair Display', serif; background: #0a0a0a; }
+
+        /* ========== BACKGROUND BLACK GOLD ========== */
+        .bg-luxury {
+            position: fixed; inset: 0; z-index: 0;
+            background: 
+                radial-gradient(ellipse at 20% 0%, rgba(212,175,55,0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 100%, rgba(184,134,11,0.12) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, #1a1a1a 0%, #0a0a0a 70%);
+        }
+
+        /* Gold particles */
+        @keyframes gold-float {
+            0% { transform: translateY(110vh) translateX(0) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 0.6; }
+            100% { transform: translateY(-15vh) translateX(50px) rotate(360deg); opacity: 0; }
+        }
+        .gold-particle {
+            position: fixed; pointer-events: none; z-index: 3;
+            border-radius: 50%;
+            background: radial-gradient(circle, #f4d03f, #d4af37, #b8860b);
+            box-shadow: 0 0 8px rgba(212,175,55,0.8), 0 0 16px rgba(212,175,55,0.4);
+            animation: gold-float linear infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1.3); }
+        }
+        .star-gold {
+            position: fixed; border-radius: 50%;
+            background: #d4af37;
+            box-shadow: 0 0 4px rgba(212,175,55,0.9);
+            pointer-events: none; z-index: 1;
+            animation: twinkle ease-in-out infinite;
+        }
+
+        /* ========== ORNAMENTS ========== */
+        @keyframes glow-pulse {
+            0%, 100% { filter: drop-shadow(0 0 10px rgba(212,175,55,0.5)); }
+            50% { filter: drop-shadow(0 0 25px rgba(212,175,55,1)) drop-shadow(0 0 40px rgba(212,175,55,0.5)); }
+        }
+        .ornament {
+            position: fixed; pointer-events: none; z-index: 2;
+            animation: glow-pulse 3s ease-in-out infinite;
+        }
+
+        /* ========== LIGHT BEAMS ========== */
+        @keyframes beam-pulse {
+            0%, 100% { opacity: 0.05; }
+            50% { opacity: 0.15; }
+        }
+        .light-beam {
+            position: fixed; top: 0; pointer-events: none; z-index: 2;
+            background: linear-gradient(180deg, rgba(212,175,55,0.3) 0%, transparent 70%);
+            transform-origin: top center;
+            animation: beam-pulse ease-in-out infinite;
+        }
+
+        /* Bottom gradient */
+        .bottom-glow {
+            position: fixed; bottom: 0; left: 0; right: 0;
+            height: 250px; z-index: 2; pointer-events: none;
+            background: radial-gradient(ellipse at 50% 100%, rgba(212,175,55,0.2) 0%, transparent 70%);
+        }
+
+        /* ========== UI LAYER ========== */
+        .ui-content { position: relative; z-index: 10; }
+
+        /* ========== LUXURY GLASS BUTTONS ========== */
+        .lbtn {
+            position: relative; overflow: hidden; cursor: pointer;
+            font-family: 'Cinzel', serif; font-weight: 700;
+            letter-spacing: 0.08em; transition: all 0.4s ease;
+            display: inline-flex; align-items: center; justify-content: center;
+            text-transform: uppercase;
+        }
+        /* Shimmer sweep */
+        .lbtn::before {
+            content: '';
+            position: absolute; top: 0; left: -120%;
+            width: 60%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(212,175,55,0.4), transparent);
+            transform: skewX(-20deg);
+            transition: left 0.6s ease;
+        }
+        .lbtn:hover::before { left: 140%; }
+        /* Top gold line */
+        .lbtn::after {
+            content: '';
+            position: absolute; top: 0; left: 5%; right: 5%; height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(212,175,55,0.9), transparent);
+        }
+        .lbtn:hover { transform: translateY(-3px) scale(1.04); }
+        .lbtn:active { transform: scale(0.96) !important; }
+
+        /* GOLD PRIMARY — main CTA */
+        .lbtn-primary {
+            background: linear-gradient(135deg, rgba(212,175,55,0.15) 0%, rgba(0,0,0,0.7) 100%);
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(212,175,55,0.5);
+            box-shadow: 
+                0 0 25px rgba(212,175,55,0.2),
+                inset 0 1px 0 rgba(212,175,55,0.3),
+                inset 0 -1px 0 rgba(184,134,11,0.2);
+            color: #f4d03f;
+        }
+        .lbtn-primary:hover {
+            background: linear-gradient(135deg, rgba(212,175,55,0.35) 0%, rgba(0,0,0,0.5) 100%);
+            border-color: rgba(244,208,63,0.9);
+            box-shadow: 
+                0 12px 40px rgba(0,0,0,0.6),
+                0 0 50px rgba(212,175,55,0.5),
+                inset 0 1px 0 rgba(244,208,63,0.5);
+            color: #fff8dc;
+        }
+
+        /* DARK GLASS — secondary */
+        .lbtn-dark {
+            background: linear-gradient(135deg, rgba(26,26,26,0.85) 0%, rgba(0,0,0,0.95) 100%);
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(212,175,55,0.35);
+            box-shadow: 
+                0 0 15px rgba(212,175,55,0.1),
+                inset 0 1px 0 rgba(212,175,55,0.15);
+            color: #d4af37;
+        }
+        .lbtn-dark:hover {
+            background: linear-gradient(135deg, rgba(42,42,42,0.9) 0%, rgba(20,20,20,0.95) 100%);
+            border-color: rgba(212,175,55,0.7);
+            box-shadow: 
+                0 12px 40px rgba(0,0,0,0.7),
+                0 0 30px rgba(212,175,55,0.3);
+            color: #f4d03f;
+        }
+
+        /* TRANSPARENT GLASS — tertiary */
+        .lbtn-glass {
+            background: rgba(255,255,255,0.03);
+            backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(212,175,55,0.3);
+            box-shadow: inset 0 1px 0 rgba(212,175,55,0.15);
+            color: #d4af37;
+        }
+        .lbtn-glass:hover {
+            background: rgba(212,175,55,0.1);
+            border-color: rgba(212,175,55,0.7);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.5), 0 0 25px rgba(212,175,55,0.3);
+            color: #f4d03f;
+        }
+
+        /* RED DANGER */
+        .lbtn-danger {
+            background: linear-gradient(135deg, rgba(120,20,20,0.4) 0%, rgba(0,0,0,0.7) 100%);
+            backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+            border: 1px solid rgba(212,175,55,0.3);
+            color: #d4af37;
+        }
+        .lbtn-danger:hover {
+            background: linear-gradient(135deg, rgba(160,30,30,0.5) 0%, rgba(20,0,0,0.8) 100%);
+            border-color: rgba(212,175,55,0.6);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.5), 0 0 30px rgba(180,30,30,0.4);
+            color: #f4d03f;
+        }
+
+        /* ========== PLAYING CARDS ========== */
+        .card-container {
+            perspective: 1200px;
+            cursor: pointer;
+        }
+        .card-flipper {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 2/3;
+            transform-style: preserve-3d;
+            transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
+        }
+        .card-flipper.flipped {
+            transform: rotateY(180deg);
+        }
+        .card-face {
+            position: absolute;
+            inset: 0;
+            backface-visibility: hidden;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .card-back {
+            background: 
+                linear-gradient(135deg, rgba(212,175,55,0.08), rgba(0,0,0,0.9)),
+                radial-gradient(circle at 50% 50%, rgba(212,175,55,0.15) 0%, transparent 60%);
+            border: 2px solid rgba(212,175,55,0.6);
+            box-shadow: 
+                0 8px 30px rgba(0,0,0,0.6),
+                0 0 20px rgba(212,175,55,0.2),
+                inset 0 0 30px rgba(212,175,55,0.1);
+            transition: all 0.4s ease;
+        }
+        .card-back::before {
+            content: '';
+            position: absolute;
+            inset: 8px;
+            border: 1px solid rgba(212,175,55,0.4);
+            border-radius: 10px;
+            pointer-events: none;
+        }
+        .card-back-pattern {
+            font-family: 'Cinzel', serif;
+            font-weight: 900;
+            font-size: 36px;
+            background: linear-gradient(135deg, #f4d03f, #d4af37, #b8860b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+            line-height: 1;
+            filter: drop-shadow(0 2px 6px rgba(212,175,55,0.5));
+        }
+        .card-back-pattern .small {
+            font-size: 11px;
+            letter-spacing: 0.3em;
+            display: block;
+            margin-top: 6px;
+            opacity: 0.7;
+        }
+        .card-front {
+            transform: rotateY(180deg);
+            background: linear-gradient(135deg, #fff8dc 0%, #f4d03f 50%, #d4af37 100%);
+            border: 2px solid #d4af37;
+            box-shadow: 
+                0 8px 40px rgba(0,0,0,0.7),
+                0 0 40px rgba(212,175,55,0.6),
+                inset 0 0 20px rgba(255,255,255,0.3);
+        }
+        .card-content {
+            text-align: center;
+            color: #0a0a0a;
+            padding: 8px;
+        }
+        .card-content .icon {
+            font-size: 38px;
+            display: block;
+            margin-bottom: 4px;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+        }
+        .card-content .label {
+            font-family: 'Cinzel', serif;
+            font-weight: 900;
+            font-size: 11px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
+        .card-container:hover .card-flipper:not(.flipped) {
+            transform: translateY(-8px) rotateY(0deg);
+        }
+        .card-container:hover .card-back {
+            box-shadow: 
+                0 15px 50px rgba(0,0,0,0.8),
+                0 0 40px rgba(212,175,55,0.5),
+                inset 0 0 40px rgba(212,175,55,0.2);
+            border-color: rgba(244,208,63,0.9);
+        }
+        .card-flipper.winner-card {
+            animation: winner-pulse 1.2s ease-in-out infinite;
+        }
+        @keyframes winner-pulse {
+            0%, 100% { transform: rotateY(180deg) scale(1); }
+            50% { transform: rotateY(180deg) scale(1.06); }
+        }
+
+        /* ========== GLASS PANEL ========== */
+        .luxury-panel {
+            background: linear-gradient(135deg, rgba(26,26,26,0.85) 0%, rgba(0,0,0,0.95) 100%);
+            backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px);
+            border: 1px solid rgba(212,175,55,0.3);
+            box-shadow: 
+                0 8px 40px rgba(0,0,0,0.7),
+                inset 0 1px 0 rgba(212,175,55,0.15);
+        }
+        .luxury-panel-gold {
+            background: linear-gradient(135deg, rgba(212,175,55,0.08) 0%, rgba(0,0,0,0.9) 100%);
+            backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px);
+            border: 1px solid rgba(212,175,55,0.5);
+            box-shadow: 
+                0 8px 40px rgba(0,0,0,0.6),
+                0 0 30px rgba(212,175,55,0.15),
+                inset 0 1px 0 rgba(212,175,55,0.25);
+        }
+
+        /* ========== MARQUEE ========== */
+        @keyframes marquee { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+        .animate-marquee { display: inline-block; animation: marquee 40s linear infinite; }
+
+        /* ========== ANIMATIONS ========== */
+        @keyframes pulse-gold {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 25px rgba(212,175,55,0.4); }
+            50% { transform: scale(1.04); box-shadow: 0 0 50px rgba(212,175,55,0.8), 0 0 80px rgba(212,175,55,0.3); }
+        }
+        .animate-pulse-gold { animation: pulse-gold 2.5s ease-in-out infinite; }
+
+        @keyframes bounce-chat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .animate-bounce-chat { animation: bounce-chat 2s ease-in-out infinite; }
+
+        @keyframes glow-frame {
+            0%, 100% { box-shadow: 0 0 20px rgba(212,175,55,0.4), 0 0 40px rgba(212,175,55,0.2); }
+            50% { box-shadow: 0 0 40px rgba(212,175,55,0.8), 0 0 70px rgba(212,175,55,0.4); }
+        }
+        .animate-glow { animation: glow-frame 3s ease-in-out infinite; }
+
+        /* ========== SOUND BUTTON ========== */
+        @keyframes sound-pulse {
+            0%, 100% { box-shadow: 0 0 12px rgba(212,175,55,0.4); }
+            50% { box-shadow: 0 0 30px rgba(212,175,55,0.9), 0 0 55px rgba(212,175,55,0.4); }
+        }
+        .lbtn-sound {
+            background: linear-gradient(135deg, rgba(26,26,26,0.85), rgba(0,0,0,0.95));
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(212,175,55,0.5);
+            box-shadow: 0 0 15px rgba(212,175,55,0.3);
+            color: #d4af37;
+            font-weight: 800;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        .lbtn-sound.playing { animation: sound-pulse 1.8s ease-in-out infinite; }
+        .lbtn-sound:hover {
+            background: linear-gradient(135deg, rgba(212,175,55,0.25), rgba(0,0,0,0.8));
+            border-color: rgba(244,208,63,0.9);
+            color: #f4d03f;
+            transform: scale(1.08);
+        }
+
+        /* ========== FLYING ELEMENTS ========== */
+        @keyframes elem-fly {
+            0% { opacity: 1; transform: translateY(0) scale(1) rotate(0deg); }
+            100% { opacity: 0; transform: translateY(-80px) scale(1.6) rotate(180deg); }
+        }
+        .fly-elem { 
+            position: fixed; 
+            font-size: 24px; 
+            pointer-events: none; 
+            z-index: 100; 
+            animation: elem-fly 1.5s ease-out forwards;
+            color: #d4af37;
+            text-shadow: 0 0 10px rgba(212,175,55,0.8);
+        }
+
+        /* ========== RIPPLE ========== */
+        @keyframes ripple-expand { to { transform: scale(4); opacity: 0; } }
+        .ripple {
+            position: absolute; border-radius: 50%;
+            background: rgba(212,175,55,0.4);
+            transform: scale(0); animation: ripple-expand 0.7s linear;
+            pointer-events: none;
+        }
+
+        /* Input style */
+        .luxury-input {
+            background: rgba(0,0,0,0.5);
+            border: 1px solid rgba(212,175,55,0.4);
+            backdrop-filter: blur(15px);
+            color: #f4d03f;
+            outline: none;
+            transition: all 0.3s ease;
+            font-family: 'Cinzel', serif;
+        }
+        .luxury-input:focus { 
+            border-color: rgba(212,175,55,0.9); 
+            box-shadow: 0 0 20px rgba(212,175,55,0.3);
+            background: rgba(0,0,0,0.7);
+        }
+        .luxury-input::placeholder { color: rgba(212,175,55,0.4); }
+
+        /* Decorative divider */
+        .gold-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin: 12px 0;
+        }
+        .gold-divider .line {
+            height: 1px;
+            width: 60px;
+            background: linear-gradient(90deg, transparent, rgba(212,175,55,0.8), transparent);
+        }
+        .gold-divider .symbol {
+            color: #d4af37;
+            font-size: 18px;
+        }
+
+        /* Shimmer text */
+        @keyframes text-shimmer {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+        .gold-text-shimmer {
+            background: linear-gradient(90deg, #b8860b 0%, #f4d03f 25%, #fff8dc 50%, #f4d03f 75%, #b8860b 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: text-shimmer 3s linear infinite;
+        }
+
+        /* Card grid stagger animation */
+        @keyframes card-appear {
+            0% { opacity: 0; transform: translateY(40px) scale(0.8); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        .card-container { animation: card-appear 0.5s ease-out backwards; }
+    </style>
+</head>
+<body>
+
+    <!-- Luxury Background -->
+    <div class="bg-luxury"></div>
+
+    <!-- Stars (gold) -->
+    <div id="starfield"></div>
+
+    <!-- Light beams from top -->
+    <div class="light-beam" style="left:8%;width:90px;height:100vh;animation-duration:7s;"></div>
+    <div class="light-beam" style="left:28%;width:55px;height:100vh;animation-duration:9s;animation-delay:1s;"></div>
+    <div class="light-beam" style="left:48%;width:120px;height:100vh;animation-duration:6s;animation-delay:2s;"></div>
+    <div class="light-beam" style="left:68%;width:70px;height:100vh;animation-duration:8s;animation-delay:0.5s;"></div>
+    <div class="light-beam" style="left:85%;width:85px;height:100vh;animation-duration:7.5s;animation-delay:1.5s;"></div>
+
+    <!-- Bottom glow -->
+    <div class="bottom-glow"></div>
+
+    <!-- Corner Ornaments -->
+    <div class="ornament" style="top:20px;left:20px;animation-duration:4s;">
+        <svg width="60" height="60" viewBox="0 0 60 60">
+            <defs>
+                <linearGradient id="ornGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#f4d03f"/>
+                    <stop offset="50%" stop-color="#d4af37"/>
+                    <stop offset="100%" stop-color="#b8860b"/>
+                </linearGradient>
+            </defs>
+            <path d="M5,5 L25,5 L25,8 L8,8 L8,25 L5,25 Z" fill="url(#ornGrad1)" opacity="0.9"/>
+            <circle cx="12" cy="12" r="3" fill="none" stroke="url(#ornGrad1)" stroke-width="1.5"/>
+            <path d="M5,15 Q15,15 15,5" fill="none" stroke="url(#ornGrad1)" stroke-width="1" opacity="0.6"/>
+        </svg>
+    </div>
+    <div class="ornament" style="top:20px;right:20px;animation-duration:4s;animation-delay:1s;transform:scaleX(-1);">
+        <svg width="60" height="60" viewBox="0 0 60 60">
+            <path d="M5,5 L25,5 L25,8 L8,8 L8,25 L5,25 Z" fill="url(#ornGrad1)" opacity="0.9"/>
+            <circle cx="12" cy="12" r="3" fill="none" stroke="url(#ornGrad1)" stroke-width="1.5"/>
+            <path d="M5,15 Q15,15 15,5" fill="none" stroke="url(#ornGrad1)" stroke-width="1" opacity="0.6"/>
+        </svg>
+    </div>
+
+    <!-- Gold Particles (generated by JS) -->
+    <div id="particleLayer"></div>
+
+    <!-- Running Text -->
+    <div class="ui-content fixed top-0 left-0 right-0 overflow-hidden z-10"
+         style="background:linear-gradient(90deg,rgba(0,0,0,0.85),rgba(20,20,20,0.9),rgba(0,0,0,0.85));backdrop-filter:blur(15px);border-bottom:1px solid rgba(212,175,55,0.4);padding:10px 0;">
+        <div class="animate-marquee whitespace-nowrap">
+            <span id="winnerText" class="text-sm font-bold" style="color:#d4af37;font-family:'Cinzel',serif;letter-spacing:0.05em;"></span>
+        </div>
+    </div>
+
+    <!-- Controls -->
+    <button id="soundToggle" class="ui-content lbtn-sound fixed top-16 right-4 p-3 rounded-full z-10 text-xl" style="width:48px;height:48px;">
+        <span id="soundIcon">🔊</span>
+    </button>
+    <button id="musicToggle" class="ui-content lbtn-sound fixed top-32 right-4 p-3 rounded-full z-10 text-xl" style="width:48px;height:48px;">
+        <span id="musicIcon">🎵</span>
+    </button>
+
+    <!-- Member Counter -->
+    <div class="ui-content fixed top-16 left-4 luxury-panel-gold px-5 py-3 rounded-2xl z-10 animate-glow">
+        <div class="flex items-center gap-3">
+            <div class="w-3 h-3 rounded-full" style="background:#d4af37;box-shadow:0 0 10px rgba(212,175,55,0.9);animation:twinkle 1.5s ease-in-out infinite;"></div>
+            <div style="font-family:'Cinzel',serif;">
+                <div style="font-size:10px;color:rgba(212,175,55,0.6);letter-spacing:0.15em;">PLAYERS ONLINE</div>
+                <div style="font-size:22px;color:#f4d03f;font-weight:900;" id="memberCount">1,357</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Live Chat -->
+    <button id="liveChatBtn" class="ui-content lbtn lbtn-primary fixed bottom-6 right-6 py-3 px-5 rounded-full z-20 animate-bounce-chat" style="font-size:14px;">
+        <div class="flex flex-col items-center gap-1">
+            <span class="text-2xl">💬</span>
+            <span class="text-xs whitespace-nowrap">LIVE CHAT 24/7</span>
+        </div>
+    </button>
+
+    <!-- App -->
+    <div id="app" class="ui-content min-h-screen flex items-center justify-center p-4 pt-24 pb-24" style="z-index:10;"></div>
+
+    <!-- Prize Modal -->
+    <div id="prizeModal" class="hidden fixed inset-0 z-50 overflow-y-auto" style="background:rgba(0,0,0,0.92);backdrop-filter:blur(10px);">
+        <div class="min-h-screen flex items-center justify-center p-4 py-8">
+            <div class="luxury-panel-gold rounded-3xl p-6 md:p-8 max-w-2xl w-full">
+                <div class="text-center mb-6">
+                    <h2 class="text-3xl font-bold mb-2 gold-text-shimmer" style="font-family:'Cinzel',serif;letter-spacing:0.1em;">
+                        ✦ DAFTAR HADIAH ✦
+                    </h2>
+                    <div class="gold-divider">
+                        <div class="line"></div>
+                        <span class="symbol">♛</span>
+                        <div class="line"></div>
+                    </div>
+                    <p style="color:rgba(212,175,55,0.6);font-size:13px;letter-spacing:0.1em;font-family:'Cinzel',serif;">HADIAH BONUS MENANTI ANDA</p>
+                </div>
+                <div id="prizeList" class="grid grid-cols-2 gap-4 mb-6"></div>
+                <button id="closePrizeModal" class="lbtn lbtn-danger w-full py-4 rounded-xl text-xl">✕ TUTUP</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    // ========== STARFIELD ==========
+    (function() {
+        const sf = document.getElementById('starfield');
+        for (let i = 0; i < 80; i++) {
+            const s = document.createElement('div');
+            s.className = 'star-gold';
+            const size = Math.random() * 2 + 0.8;
+            s.style.cssText = `
+                width:${size}px;height:${size}px;
+                left:${Math.random()*100}%;top:${Math.random()*80}%;
+                animation-duration:${2+Math.random()*4}s;
+                animation-delay:${Math.random()*5}s;
+            `;
+            sf.appendChild(s);
+        }
+    })();
+
+    // ========== GOLD PARTICLES ==========
+    function spawnParticle() {
+        const layer = document.getElementById('particleLayer');
+        const p = document.createElement('div');
+        p.className = 'gold-particle';
+        const size = 3 + Math.random() * 6;
+        p.style.width = size + 'px';
+        p.style.height = size + 'px';
+        p.style.left = (Math.random() * 100) + '%';
+        p.style.bottom = '-20px';
+        const dur = 8 + Math.random() * 10;
+        p.style.animationDuration = dur + 's';
+        p.style.animationDelay = (Math.random() * 3) + 's';
+        layer.appendChild(p);
+        setTimeout(() => p.remove(), (dur + 4) * 1000);
+    }
+    for (let i = 0; i < 15; i++) setTimeout(() => spawnParticle(), Math.random() * 4000);
+    setInterval(spawnParticle, 800);
+
+    // ========== ELEGANT MUSIC ==========
+    let audioCtx = null, musicPlaying = false, musicTimer = null;
+    function getCtx() {
+        if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        return audioCtx;
+    }
+    const N = { C3:130.81, D3:146.83, E3:164.81, F3:174.61, G3:196, A3:220, B3:246.94, C4:261.63, D4:293.66, E4:329.63, F4:349.23, G4:392, A4:440, B4:493.88, C5:523.25, D5:587.33, E5:659.25, F5:698.46, G5:783.99, A5:880 };
+    
+    // Elegant casino-style melody
+    const MELODY = [
+        {n:'C5',d:.5},{n:'E5',d:.25},{n:'G5',d:.25},{n:'E5',d:.5},{n:'C5',d:.5},
+        {n:'A4',d:.5},{n:'C5',d:.25},{n:'E5',d:.25},{n:'C5',d:1},
+        {n:'F5',d:.5},{n:'A4',d:.25},{n:'C5',d:.25},{n:'F5',d:.5},{n:'A4',d:.5},
+        {n:'G4',d:.5},{n:'B4',d:.25},{n:'D5',d:.25},{n:'G4',d:1},
+        {n:'E5',d:.25},{n:'D5',d:.25},{n:'C5',d:.25},{n:'B4',d:.25},{n:'A4',d:.5},{n:'G4',d:.5},
+        {n:'F4',d:.5},{n:'A4',d:.25},{n:'C5',d:.25},{n:'F5',d:1},
+    ];
+    
+    function pNote(f,t,dur,type,vol,ctx){ 
+        const o=ctx.createOscillator(),g=ctx.createGain(); 
+        o.connect(g); g.connect(ctx.destination); 
+        o.type=type; o.frequency.value=f; 
+        g.gain.setValueAtTime(0,t); 
+        g.gain.linearRampToValueAtTime(vol,t+.03); 
+        g.gain.setValueAtTime(vol,t+dur*.7); 
+        g.gain.linearRampToValueAtTime(0,t+dur); 
+        o.start(t); o.stop(t+dur+.05); 
+    }
+    function pBell(f,t,ctx){ 
+        [1,2.4,3.8].forEach(r=>{ 
+            const o=ctx.createOscillator(),g=ctx.createGain(); 
+            o.connect(g); g.connect(ctx.destination); 
+            o.type='sine'; o.frequency.value=f*r; 
+            g.gain.setValueAtTime(.04,t); 
+            g.gain.exponentialRampToValueAtTime(.001,t+2); 
+            o.start(t); o.stop(t+2.1); 
+        }); 
+    }
+    
+    function scheduleLoop(){
+        if(!musicPlaying)return;
+        const ctx=getCtx(), bpm=80, beat=60/bpm, start=ctx.currentTime+.05;
+        let t=start;
+        // Main melody
+        MELODY.forEach(note=>{ 
+            pNote(N[note.n],t,note.d*beat*.85,'sine',.09,ctx); 
+            t+=note.d*beat; 
+        });
+        // Harmony layer
+        let ht=start; 
+        MELODY.forEach(note=>{ 
+            pNote(N[note.n]*0.5,ht,note.d*beat*.7,'triangle',.05,ctx); 
+            ht+=note.d*beat; 
+        });
+        // Bass line
+        const bass=[
+            {n:'C3',d:2},{n:'A3',d:2},{n:'F3',d:2},{n:'G3',d:2},
+            {n:'C3',d:2},{n:'F3',d:2},{n:'G3',d:1},{n:'C3',d:1}
+        ];
+        let bt=start; 
+        bass.forEach(note=>{ 
+            pNote(N[note.n],bt,note.d*beat*.85,'sine',.06,ctx); 
+            bt+=note.d*beat; 
+        });
+        // Bells on accents
+        const totalBeats = MELODY.reduce((s,n)=>s+n.d,0);
+        for(let i=0;i<totalBeats;i+=4){ 
+            pBell(N['C5'],start+i*beat,ctx); 
+        }
+        const loopDur=MELODY.reduce((s,n)=>s+n.d*beat,0);
+        musicTimer=setTimeout(scheduleLoop,(loopDur-.3)*1000);
+    }
+    function startMusic(){ 
+        if(musicPlaying)return; 
+        musicPlaying=true; 
+        scheduleLoop(); 
+        document.getElementById('musicIcon').textContent='🎶'; 
+        document.getElementById('musicToggle').classList.add('playing'); 
+    }
+    function stopMusic(){ 
+        musicPlaying=false; 
+        clearTimeout(musicTimer); 
+        document.getElementById('musicIcon').textContent='🎵'; 
+        document.getElementById('musicToggle').classList.remove('playing'); 
+    }
+
+    // ========== RIPPLE ==========
+    function addRipple(btn, e) {
+        const r = btn.getBoundingClientRect();
+        const x = (e.clientX||r.left+r.width/2)-r.left, y = (e.clientY||r.top+r.height/2)-r.top;
+        const size = Math.max(r.width,r.height);
+        const rip = document.createElement('span'); rip.className='ripple';
+        rip.style.cssText=`width:${size}px;height:${size}px;left:${x-size/2}px;top:${y-size/2}px;`;
+        btn.appendChild(rip); rip.addEventListener('animationend',()=>rip.remove());
+    }
+    document.addEventListener('click',e=>{ 
+        const btn=e.target.closest('.lbtn,.lbtn-sound,.lbtn-primary,.lbtn-dark,.lbtn-glass,.lbtn-danger'); 
+        if(btn)addRipple(btn,e); 
+    });
+
+    // Flying gold elements
+    function spawnFly(x, y) {
+        const symbols = ['♛','♕','✦','★','♦','◆'];
+        const el = document.createElement('div'); 
+        el.className = 'fly-elem';
+        el.textContent = symbols[Math.floor(Math.random()*symbols.length)];
+        el.style.left=x+'px'; el.style.top=y+'px';
+        document.body.appendChild(el); 
+        el.addEventListener('animationend',()=>el.remove());
+    }
+
+    // Ambient flies when music on
+    setInterval(() => { 
+        if(musicPlaying) spawnFly(Math.random()*window.innerWidth, window.innerHeight*.3+Math.random()*window.innerHeight*.4); 
+    }, 1200);
+
+    // ========== MAIN APP ==========
+    const prizes = [
+        {name:'Saldo 100rb',value:'Rp 100.000',icon:'💸'},
+        {name:'Saldo 150rb',value:'Rp 150.000',icon:'💸'},
+        {name:'Saldo 200rb',value:'Rp 200.000',icon:'💸'},
+        {name:'Saldo 350rb',value:'Rp 350.000',icon:'💸'},
+        {name:'Saldo 500rb',value:'Rp 500.000',icon:'💸'},
+        {name:'Saldo 1 Juta',value:'Rp 1.000.000',icon:'💸'},
+    ];
+    let stage='welcome', userId='';
+    let claimedUsers=JSON.parse(localStorage.getItem("CLAIMED_USERS_TK"))||[];
+    let soundEnabled=true;
+
+    function generateUsername(){ 
+        const p=['user_','member_','player_','lucky_','winner_','vip_','king_','queen_']; 
+        return p[Math.floor(Math.random()*p.length)]+'***'+Math.floor(Math.random()*100).toString().padStart(2,'0'); 
+    }
+
+    function updateWinnerText(){
+        let text='';
+        const sym=['♛','♕','✦','★','♦','◆','♚','♔'];
+        for(let i=0;i<8;i++) text+=`${sym[Math.floor(Math.random()*sym.length)]} Selamat kepada ${generateUsername()} mendapatkan ${prizes[Math.floor(Math.random()*prizes.length)].value}!  `;
+        document.getElementById('winnerText').textContent=text;
+    }
+
+    function playSound(type){
+        if(!soundEnabled)return;
+        const ctx=getCtx();
+        if(type==='click') {
+            pNote(800,ctx.currentTime,.08,'sine',.15,ctx);
+            pNote(1200,ctx.currentTime+.02,.06,'sine',.1,ctx);
+        }
+        else if(type==='flip') {
+            pNote(600,ctx.currentTime,.1,'triangle',.12,ctx);
+            pNote(900,ctx.currentTime+.08,.1,'triangle',.1,ctx);
+        }
+        else if(type==='win') {
+            [523.25,659.25,783.99,1046.5,1318.5].forEach((f,i)=>
+                setTimeout(()=>pNote(f,ctx.currentTime,.4,'triangle',.13,ctx),i*120)
+            );
+        }
+    }
+
+    // ===== RENDER =====
+    function renderWelcome(){
+        return `
+        <div class="text-center relative" style="max-width:620px;width:100%;">
+            <!-- Header -->
+            <div class="luxury-panel-gold rounded-3xl p-6 md:p-8 mb-7 animate-glow">
+                <div class="text-xs font-bold mb-2" style="color:rgba(212,175,55,0.7);letter-spacing:0.3em;font-family:'Cinzel',serif;">✦ KHUSUS AKUN BARU ✦</div>
+                <div class="text-5xl md:text-7xl font-bold gold-text-shimmer" style="font-family:'Cinzel',serif;letter-spacing:0.05em;">
+                    AJAIB4D
+                </div>
+                <div class="gold-divider">
+                    <div class="line"></div>
+                    <span class="symbol">♛</span>
+                    <div class="line"></div>
+                </div>
+                <div class="text-xs" style="color:rgba(212,175,55,0.55);letter-spacing:0.25em;font-family:'Cinzel',serif;">CLAIM BONUS NEW MEMBER</div>
+            </div>
+
+            <!-- Title -->
+            <h1 class="text-4xl md:text-6xl font-bold mb-2 gold-text-shimmer" style="font-family:'Cinzel',serif;letter-spacing:0.05em;">
+                CARDS EXTRA BONUS
+            </h1>
+            <div class="gold-divider mb-5">
+                <div class="line"></div>
+                <span class="symbol">♦ ◆ ♦</span>
+                <div class="line"></div>
+            </div>
+
+            <!-- Description -->
+            <div class="luxury-panel rounded-2xl p-5 mb-7 mx-auto" style="max-width:480px;">
+                <p class="text-lg font-medium leading-relaxed" style="color:#d4af37;font-family:'Cinzel',serif;letter-spacing:0.05em;">
+                    🎴 CLAIM BONUS NEW MEMBER AJAIB4D 🎴<br/>
+                    <span class="gold-text-shimmer" style="font-weight:900;font-size:1.1em;">PILIH 1 DARI 6 KARTU MISTERI</span><br/>
+                    <span style="font-size:13px;color:rgba(212,175,55,0.55);letter-spacing:0.15em;">Raih Bonus Spektakuler — Buka sekarang!</span>
+                </p>
+            </div>
+
+            <!-- Buttons -->
+            <button id="showPrizesBtn" class="lbtn lbtn-glass py-4 px-10 rounded-full text-base mb-4" style="display:inline-block;">
+                ♛ LIST HADIAH BONUS
+            </button>
+            <br/>
+            <button id="startBtn" class="lbtn lbtn-primary py-5 px-14 rounded-full text-xl animate-pulse-gold" style="display:inline-block;margin-top:8px;">
+                ✦ CLAIM BONUS DISINI ✦
+            </button>
+        </div>`;
+    }
+
+    function renderInput(){
+        return `
+        <div class="relative" style="width:100%;max-width:440px;">
+            <div class="luxury-panel-gold rounded-3xl p-8">
+                <div class="text-center mb-6">
+                    <div class="text-4xl mb-2" style="filter:drop-shadow(0 0 10px rgba(212,175,55,0.6));">♛</div>
+                    <h2 class="text-2xl font-bold mb-1 gold-text-shimmer" style="font-family:'Cinzel',serif;letter-spacing:0.1em;">VERIFIKASI USER ID</h2>
+                    <div class="gold-divider">
+                        <div class="line"></div>
+                        <span class="symbol">✦</span>
+                        <div class="line"></div>
+                    </div>
+                    <p style="color:rgba(212,175,55,0.5);font-size:12px;letter-spacing:0.15em;font-family:'Cinzel',serif;">UNTUK KLAIM HADIAH ANDA</p>
+                </div>
+                <input type="text" id="userIdInput" placeholder="Contoh: user_***88"
+                    class="luxury-input w-full px-5 py-4 rounded-xl mb-4 text-lg font-bold"
+                    style="width:100%;text-align:center;letter-spacing:0.1em;">
+                <div id="errorMsg" class="hidden px-4 py-3 rounded-lg mb-4 text-sm font-bold text-center"
+                     style="background:rgba(120,20,20,0.3);border:1px solid rgba(212,175,55,0.4);color:#d4af37;font-family:'Cinzel',serif;letter-spacing:0.05em;"></div>
+                <button id="continueBtn" class="lbtn lbtn-primary w-full py-4 rounded-xl text-lg">✦ LANJUTKAN</button>
+            </div>
+        </div>`;
+    }
+
+    function renderCardSelection(){
+        // 6 cards in a 3x2 grid
+        let cards='';
+        for(let i=0;i<6;i++){
+            cards+=`
+            <div class="card-container" data-index="${i}" style="animation-delay:${i*0.1}s;">
+                <div class="card-flipper">
+                    <div class="card-face card-back">
+                        <div class="card-back-pattern">
+                            ♛
+                            <span class="small">AJAIB4D</span>
+                        </div>
+                    </div>
+                    <div class="card-face card-front">
+                        <div class="card-content">
+                            <span class="icon"></span>
+                            <span class="label"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>`;
+        }
+        return `
+        <div class="text-center relative" style="width:100%;">
+            <div class="luxury-panel-gold rounded-2xl p-5 mb-7 inline-block">
+                <h2 class="text-xl md:text-2xl font-bold gold-text-shimmer" style="font-family:'Cinzel',serif;letter-spacing:0.1em;">
+                    ♛ PILIH 1 KARTU UNTUK CLAIM BONUS ♛
+                </h2>
+                <div class="gold-divider">
+                    <div class="line"></div>
+                    <span class="symbol">♦</span>
+                    <div class="line"></div>
+                </div>
+                <p style="color:rgba(212,175,55,0.55);font-size:11px;letter-spacing:0.2em;font-family:'Cinzel',serif;">HADIAH DARI 100 RB SAMPAI 1 JUTAAN</p>
+            </div>
+            <div class="grid grid-cols-3 gap-3 md:gap-5 mx-auto" style="max-width:560px;">${cards}</div>
+            <div class="mt-6 text-xs" style="color:rgba(212,175,55,0.5);letter-spacing:0.2em;font-family:'Cinzel',serif;">
+                ✦ EVENT TERBATAS KHUSUS PENGGUNA BARU ✦
+            </div>
+        </div>`;
+    }
+
+    function renderResult(prize){
+        const uid=localStorage.getItem("USER_ID_TK")||"Unknown";
+        return `
+        <div class="relative" style="width:100%;max-width:440px;">
+            <div class="luxury-panel-gold rounded-3xl p-8 md:p-10 text-center">
+                <div class="absolute top-4 left-4 rounded-xl font-bold px-3 py-2 text-xs"
+                     style="background:rgba(0,0,0,0.6);border:1px solid rgba(212,175,55,0.5);color:#d4af37;backdrop-filter:blur(10px);font-family:'Cinzel',serif;letter-spacing:0.1em;">
+                    ID: ${uid}
+                </div>
+                <div class="text-6xl mb-4 mt-8" style="animation:pulse-gold 1.2s ease-in-out infinite;filter:drop-shadow(0 0 15px rgba(212,175,55,0.8));">${prize.icon}</div>
+                <div class="text-xl mb-1" style="color:#d4af37;font-family:'Cinzel',serif;letter-spacing:0.2em;">CONGRATULATIONS!</div>
+                <h2 class="text-4xl font-bold mb-3 gold-text-shimmer" style="font-family:'Cinzel',serif;letter-spacing:0.05em;">SELAMAT! ✦</h2>
+                <div class="gold-divider mb-4">
+                    <div class="line"></div>
+                    <span class="symbol">♛</span>
+                    <div class="line"></div>
+                </div>
+                <p class="text-base mb-4" style="color:rgba(212,175,55,0.7);font-family:'Cinzel',serif;letter-spacing:0.1em;">ANDA MEMENANGKAN:</p>
+                <div class="rounded-2xl mb-5 py-6 px-6" style="background:linear-gradient(135deg,rgba(212,175,55,0.25),rgba(0,0,0,0.7));border:1px solid rgba(212,175,55,0.6);box-shadow:0 0 30px rgba(212,175,55,0.3),inset 0 1px 0 rgba(244,208,63,0.3);">
+                    <p class="text-3xl font-bold gold-text-shimmer" style="font-family:'Cinzel',serif;letter-spacing:0.05em;">${prize.value}</p>
+                </div>
+                <p class="text-xs mb-5" style="color:rgba(212,175,55,0.5);letter-spacing:0.2em;font-family:'Cinzel',serif;">♛ LUCKY WINNER ♛</p>
+                <button id="claimBtn" class="lbtn lbtn-primary w-full py-4 rounded-xl text-lg mb-3">✦ KLAIM HADIAH SEKARANG</button>
+                <button id="resetBtn" class="lbtn lbtn-glass w-full py-3 rounded-xl text-sm">♻ KEMBALI KE BERANDA</button>
+            </div>
+        </div>`;
+    }
+
+    function render(){
+        const app=document.getElementById('app');
+        if(stage==='welcome'){
+            app.innerHTML=renderWelcome();
+            document.getElementById('startBtn').onclick=e=>{ 
+                playSound('click'); 
+                spawnFly(e.clientX,e.clientY); 
+                stage='input'; render(); 
+            };
+            document.getElementById('showPrizesBtn').onclick=e=>{ playSound('click'); showPrizeModal(); };
+        } else if(stage==='input'){
+            app.innerHTML=renderInput();
+            document.getElementById('continueBtn').onclick=e=>{
+                playSound('click');
+                const v=document.getElementById('userIdInput').value.trim();
+                const err=document.getElementById('errorMsg');
+                if(!v){ err.textContent='⚠ MASUKKAN USER ID ANDA!'; err.classList.remove('hidden'); return; }
+                const n=v.toLowerCase();
+                if(claimedUsers.includes(n)){ err.textContent='⚠ USER ID INI SUDAH MENGKLAIM HADIAH!'; err.classList.remove('hidden'); return; }
+                userId=n; localStorage.setItem("USER_ID_TK",userId);
+                claimedUsers.push(n); localStorage.setItem("CLAIMED_USERS_TK",JSON.stringify(claimedUsers));
+                stage='select'; render();
+            };
+            // Enter key support
+            document.getElementById('userIdInput').addEventListener('keypress', e => {
+                if (e.key === 'Enter') document.getElementById('continueBtn').click();
+            });
+        } else if(stage==='select'){
+            app.innerHTML=renderCardSelection();
+            
+            // Saldo prizes that can be won
+            const rp=[
+                {name:'Saldo 100rb',value:'Rp 100.000',icon:'💸'},
+                {name:'Saldo 250rb',value:'Rp 250.000',icon:'💸'},
+                {name:'Saldo 500rb',value:'Rp 500.000',icon:'💸'},
+                {name:'Saldo 1 Juta',value:'Rp 1.000.000',icon:'💸'}
+            ];
+            
+            document.querySelectorAll('.card-container').forEach((card)=>{
+                card.onclick=function(e){
+                    if (this.dataset.flipped === 'true') return;
+                    
+                    playSound('flip');
+                    spawnFly(e.clientX-15,e.clientY-10); 
+                    spawnFly(e.clientX+15,e.clientY-15);
+                    
+                    // Disable all other cards
+                    document.querySelectorAll('.card-container').forEach(c=>{
+                        if (c !== this) {
+                            c.style.pointerEvents = 'none';
+                            c.style.opacity = '0.4';
+                            c.style.transition = 'opacity 0.5s';
+                        }
+                    });
+                    
+                    // Pick a random prize
+                    const prize = rp[Math.floor(Math.random()*rp.length)];
+                    
+                    // Update card front content
+                    const frontContent = this.querySelector('.card-content');
+                    frontContent.querySelector('.icon').textContent = prize.icon;
+                    frontContent.querySelector('.label').textContent = prize.value;
+                    
+                    // Flip the card
+                    const flipper = this.querySelector('.card-flipper');
+                    flipper.classList.add('flipped');
+                    this.dataset.flipped = 'true';
+                    
+                    // Add winner animation after flip
+                    setTimeout(() => {
+                        flipper.classList.add('winner-card');
+                    }, 800);
+                    
+                    setTimeout(()=>{
+                        playSound('win');
+                        // Burst of gold particles
+                        for(let i=0;i<10;i++){
+                            setTimeout(()=>{
+                                spawnFly(e.clientX+(Math.random()*100-50),e.clientY+(Math.random()*100-50));
+                            }, i*60);
+                        }
+                    },1200);
+                    
+                    setTimeout(()=>{
+                        stage='result'; 
+                        app.innerHTML=renderResult(prize);
+                        document.getElementById('claimBtn').onclick=()=>{ 
+                            playSound('click'); 
+                            window.open('https://shorthe.link/masukajaib4d/','_blank'); 
+                        };
+                        document.getElementById('resetBtn').onclick=()=>{ 
+                            playSound('click'); 
+                            stage='welcome'; userId=''; render(); 
+                        };
+                    },2800);
+                };
+            });
+        }
+    }
+
+    function showPrizeModal(){
+        document.getElementById('prizeList').innerHTML=prizes.map(p=>`
+            <div class="luxury-panel rounded-2xl p-4 text-center" style="border-color:rgba(212,175,55,0.3);">
+                <div class="text-4xl mb-2" style="filter:drop-shadow(0 0 8px rgba(212,175,55,0.5));">${p.icon}</div>
+                <h3 class="text-sm font-bold mb-2" style="color:#d4af37;font-family:'Cinzel',serif;letter-spacing:0.05em;">${p.name}</h3>
+                <div class="rounded-lg py-2 px-3" style="background:rgba(0,0,0,0.6);border:1px solid rgba(212,175,55,0.2);">
+                    <p class="text-base font-bold gold-text-shimmer" style="font-family:'Cinzel',serif;">${p.value}</p>
+                </div>
+            </div>`).join('');
+        document.getElementById('prizeModal').classList.remove('hidden');
+    }
+
+    document.getElementById('soundToggle').onclick=()=>{ 
+        soundEnabled=!soundEnabled; 
+        document.getElementById('soundIcon').textContent=soundEnabled?'🔊':'🔇'; 
+    };
+    document.getElementById('musicToggle').onclick=e=>{ 
+        if(musicPlaying){stopMusic();}
+        else{startMusic();spawnFly(e.clientX-10,e.clientY-10);spawnFly(e.clientX+10,e.clientY-20);} 
+    };
+    document.getElementById('liveChatBtn').onclick=()=>{ 
+        playSound('click'); 
+        window.open('https://static.zdassets.com/web_widget/latest/liveChat.html?v=10#key=hokiajaib4d.zendesk.com','_blank'); 
+    };
+    document.getElementById('closePrizeModal').onclick=()=>{ 
+        playSound('click'); 
+        document.getElementById('prizeModal').classList.add('hidden'); 
+    };
+
+    updateWinnerText();
+    setInterval(updateWinnerText,12000);
+    render();
+    </script>
+</body>
+</html>
