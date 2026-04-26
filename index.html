@@ -3,7 +3,7 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AJAIB4D — CLAIM BONUS NEW MEMBER</title>
     <link rel="icon" type="image/x-icon" href="https://imgora.xyz//uploads/1777240196_LOGO_4D-removebg-preview.png" />
     <script src="https://cdn.tailwindcss.com"></script>
@@ -20,11 +20,10 @@
             --black-soft: #2a2a2a;
         }
 
-        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-        html { scroll-behavior: smooth; }
+        * { box-sizing: border-box; }
         body { margin: 0; overflow-x: hidden; font-family: 'Playfair Display', serif; background: #0a0a0a; }
 
-        /* ========== BACKGROUND ========== */
+        /* ========== BACKGROUND BLACK GOLD ========== */
         .bg-luxury {
             position: fixed; inset: 0; z-index: 0;
             background: 
@@ -69,8 +68,6 @@
             position: fixed; pointer-events: none; z-index: 2;
             animation: glow-pulse 3s ease-in-out infinite;
         }
-        /* Hide ornaments on small screens */
-        @media (max-width: 480px) { .ornament { display: none; } }
 
         /* ========== LIGHT BEAMS ========== */
         @keyframes beam-pulse {
@@ -83,11 +80,8 @@
             transform-origin: top center;
             animation: beam-pulse ease-in-out infinite;
         }
-        /* Reduce beams on mobile */
-        @media (max-width: 480px) {
-            .light-beam-hide { display: none; }
-        }
 
+        /* Bottom gradient */
         .bottom-glow {
             position: fixed; bottom: 0; left: 0; right: 0;
             height: 250px; z-index: 2; pointer-events: none;
@@ -104,9 +98,8 @@
             letter-spacing: 0.08em; transition: all 0.4s ease;
             display: inline-flex; align-items: center; justify-content: center;
             text-transform: uppercase;
-            touch-action: manipulation;
-            -webkit-user-select: none; user-select: none;
         }
+        /* Shimmer sweep */
         .lbtn::before {
             content: '';
             position: absolute; top: 0; left: -120%;
@@ -116,14 +109,16 @@
             transition: left 0.6s ease;
         }
         .lbtn:hover::before { left: 140%; }
+        /* Top gold line */
         .lbtn::after {
             content: '';
             position: absolute; top: 0; left: 5%; right: 5%; height: 1px;
             background: linear-gradient(90deg, transparent, rgba(212,175,55,0.9), transparent);
         }
         .lbtn:hover { transform: translateY(-3px) scale(1.04); }
-        .lbtn:active { transform: scale(0.96) !important; opacity: 0.85; }
+        .lbtn:active { transform: scale(0.96) !important; }
 
+        /* GOLD PRIMARY — main CTA */
         .lbtn-primary {
             background: linear-gradient(135deg, rgba(212,175,55,0.15) 0%, rgba(0,0,0,0.7) 100%);
             backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
@@ -144,6 +139,7 @@
             color: #fff8dc;
         }
 
+        /* DARK GLASS — secondary */
         .lbtn-dark {
             background: linear-gradient(135deg, rgba(26,26,26,0.85) 0%, rgba(0,0,0,0.95) 100%);
             backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
@@ -156,10 +152,13 @@
         .lbtn-dark:hover {
             background: linear-gradient(135deg, rgba(42,42,42,0.9) 0%, rgba(20,20,20,0.95) 100%);
             border-color: rgba(212,175,55,0.7);
-            box-shadow: 0 12px 40px rgba(0,0,0,0.7), 0 0 30px rgba(212,175,55,0.3);
+            box-shadow: 
+                0 12px 40px rgba(0,0,0,0.7),
+                0 0 30px rgba(212,175,55,0.3);
             color: #f4d03f;
         }
 
+        /* TRANSPARENT GLASS — tertiary */
         .lbtn-glass {
             background: rgba(255,255,255,0.03);
             backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
@@ -174,6 +173,7 @@
             color: #f4d03f;
         }
 
+        /* RED DANGER */
         .lbtn-danger {
             background: linear-gradient(135deg, rgba(120,20,20,0.4) 0%, rgba(0,0,0,0.7) 100%);
             backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
@@ -199,7 +199,9 @@
             transform-style: preserve-3d;
             transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
         }
-        .card-flipper.flipped { transform: rotateY(180deg); }
+        .card-flipper.flipped {
+            transform: rotateY(180deg);
+        }
         .card-face {
             position: absolute;
             inset: 0;
@@ -232,7 +234,7 @@
         .card-back-pattern {
             font-family: 'Cinzel', serif;
             font-weight: 900;
-            font-size: 28px;
+            font-size: 36px;
             background: linear-gradient(135deg, #f4d03f, #d4af37, #b8860b);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -240,19 +242,13 @@
             line-height: 1;
             filter: drop-shadow(0 2px 6px rgba(212,175,55,0.5));
         }
-        /* Responsive card pattern font */
-        @media (max-width: 400px) { .card-back-pattern { font-size: 20px; } }
-        @media (min-width: 480px) { .card-back-pattern { font-size: 36px; } }
-
         .card-back-pattern .small {
-            font-size: 9px;
+            font-size: 11px;
             letter-spacing: 0.3em;
             display: block;
-            margin-top: 4px;
+            margin-top: 6px;
             opacity: 0.7;
         }
-        @media (min-width: 480px) { .card-back-pattern .small { font-size: 11px; } }
-
         .card-front {
             transform: rotateY(180deg);
             background: linear-gradient(135deg, #fff8dc 0%, #f4d03f 50%, #d4af37 100%);
@@ -265,27 +261,22 @@
         .card-content {
             text-align: center;
             color: #0a0a0a;
-            padding: 6px;
+            padding: 8px;
         }
         .card-content .icon {
-            font-size: 28px;
+            font-size: 38px;
             display: block;
-            margin-bottom: 2px;
+            margin-bottom: 4px;
             filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
         }
-        @media (max-width: 400px) { .card-content .icon { font-size: 22px; } }
-        @media (min-width: 480px) { .card-content .icon { font-size: 38px; } }
-
         .card-content .label {
             font-family: 'Cinzel', serif;
             font-weight: 900;
-            font-size: 9px;
-            letter-spacing: 0.05em;
+            font-size: 11px;
+            letter-spacing: 0.1em;
             text-transform: uppercase;
             line-height: 1.2;
         }
-        @media (min-width: 480px) { .card-content .label { font-size: 11px; letter-spacing: 0.1em; } }
-
         .card-container:hover .card-flipper:not(.flipped) {
             transform: translateY(-8px) rotateY(0deg);
         }
@@ -336,7 +327,7 @@
 
         @keyframes bounce-chat {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
+            50% { transform: translateY(-10px); }
         }
         .animate-bounce-chat { animation: bounce-chat 2s ease-in-out infinite; }
 
@@ -362,7 +353,6 @@
             cursor: pointer;
             position: relative;
             overflow: hidden;
-            touch-action: manipulation;
         }
         .lbtn-sound.playing { animation: sound-pulse 1.8s ease-in-out infinite; }
         .lbtn-sound:hover {
@@ -405,7 +395,6 @@
             outline: none;
             transition: all 0.3s ease;
             font-family: 'Cinzel', serif;
-            font-size: 16px; /* IMPORTANT: prevents iOS auto-zoom */
         }
         .luxury-input:focus { 
             border-color: rgba(212,175,55,0.9); 
@@ -419,17 +408,17 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
-            margin: 10px 0;
+            gap: 12px;
+            margin: 12px 0;
         }
         .gold-divider .line {
             height: 1px;
-            width: 50px;
+            width: 60px;
             background: linear-gradient(90deg, transparent, rgba(212,175,55,0.8), transparent);
         }
         .gold-divider .symbol {
             color: #d4af37;
-            font-size: 16px;
+            font-size: 18px;
         }
 
         /* Shimmer text */
@@ -452,140 +441,6 @@
             100% { opacity: 1; transform: translateY(0) scale(1); }
         }
         .card-container { animation: card-appear 0.5s ease-out backwards; }
-
-        /* ========== FLOATING CONTROLS — MOBILE OPTIMIZED ========== */
-        .top-controls {
-            position: fixed;
-            top: 50px; /* below marquee */
-            right: 10px;
-            display: flex;
-            flex-direction: row;
-            gap: 8px;
-            z-index: 20;
-        }
-        .ctrl-btn {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            font-size: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0;
-        }
-        @media (min-width: 480px) {
-            .top-controls {
-                top: 58px;
-                right: 14px;
-                flex-direction: column;
-                gap: 10px;
-            }
-            .ctrl-btn {
-                width: 48px;
-                height: 48px;
-                font-size: 20px;
-            }
-        }
-
-        /* Member counter responsive */
-        .member-counter {
-            position: fixed;
-            top: 50px;
-            left: 8px;
-            z-index: 20;
-        }
-        @media (min-width: 480px) {
-            .member-counter { top: 58px; left: 14px; }
-        }
-
-        /* Live chat button responsive */
-        .live-chat-btn {
-            position: fixed;
-            bottom: 14px;
-            right: 14px;
-            z-index: 20;
-        }
-
-        /* ========== MARQUEE BAR ========== */
-        .marquee-bar {
-            position: fixed;
-            top: 0; left: 0; right: 0;
-            overflow: hidden;
-            z-index: 30;
-            background: linear-gradient(90deg,rgba(0,0,0,0.9),rgba(20,20,20,0.95),rgba(0,0,0,0.9));
-            backdrop-filter: blur(15px);
-            border-bottom: 1px solid rgba(212,175,55,0.4);
-            padding: 8px 0;
-            height: 42px;
-            display: flex;
-            align-items: center;
-        }
-        @media (min-width: 480px) {
-            .marquee-bar { height: 48px; padding: 10px 0; }
-        }
-
-        /* ========== WELCOME PAGE RESPONSIVE ========== */
-        .welcome-logo { font-size: clamp(2.2rem, 12vw, 5rem); }
-        .welcome-title { font-size: clamp(1.6rem, 8vw, 3.5rem); }
-        .welcome-subtitle { font-size: clamp(0.9rem, 4vw, 1.1rem); }
-        .welcome-desc-text { font-size: clamp(0.85rem, 3.5vw, 1rem); }
-
-        /* ========== CARD SELECTION RESPONSIVE ========== */
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-            max-width: 360px;
-            margin: 0 auto;
-        }
-        @media (min-width: 400px) {
-            .card-grid { gap: 12px; max-width: 400px; }
-        }
-        @media (min-width: 480px) {
-            .card-grid { gap: 16px; max-width: 500px; }
-        }
-        @media (min-width: 600px) {
-            .card-grid { gap: 20px; max-width: 560px; }
-        }
-
-        /* ========== RESULT PAGE RESPONSIVE ========== */
-        .result-prize-value { font-size: clamp(1.6rem, 8vw, 2.2rem); }
-
-        /* ========== MODAL RESPONSIVE ========== */
-        .prize-modal-inner {
-            max-width: 500px;
-            width: calc(100% - 20px);
-            margin: 0 auto;
-        }
-        .prize-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-        }
-        @media (min-width: 480px) {
-            .prize-grid { gap: 14px; }
-        }
-
-        /* ========== APP PADDING RESPONSIVE ========== */
-        #app {
-            padding-top: 110px !important; /* marquee + member counter */
-            padding-bottom: 100px !important; /* live chat btn */
-            padding-left: 12px;
-            padding-right: 12px;
-        }
-        @media (min-width: 480px) {
-            #app {
-                padding-top: 130px !important;
-                padding-left: 16px;
-                padding-right: 16px;
-            }
-        }
-
-        /* Safe bottom on iOS */
-        @supports (padding-bottom: env(safe-area-inset-bottom)) {
-            #app { padding-bottom: calc(100px + env(safe-area-inset-bottom)) !important; }
-            .live-chat-btn { bottom: calc(14px + env(safe-area-inset-bottom)); }
-        }
     </style>
 </head>
 <body>
@@ -593,20 +448,20 @@
     <!-- Luxury Background -->
     <div class="bg-luxury"></div>
 
-    <!-- Stars -->
+    <!-- Stars (gold) -->
     <div id="starfield"></div>
 
-    <!-- Light beams -->
+    <!-- Light beams from top -->
     <div class="light-beam" style="left:8%;width:90px;height:100vh;animation-duration:7s;"></div>
-    <div class="light-beam light-beam-hide" style="left:28%;width:55px;height:100vh;animation-duration:9s;animation-delay:1s;"></div>
+    <div class="light-beam" style="left:28%;width:55px;height:100vh;animation-duration:9s;animation-delay:1s;"></div>
     <div class="light-beam" style="left:48%;width:120px;height:100vh;animation-duration:6s;animation-delay:2s;"></div>
-    <div class="light-beam light-beam-hide" style="left:68%;width:70px;height:100vh;animation-duration:8s;animation-delay:0.5s;"></div>
+    <div class="light-beam" style="left:68%;width:70px;height:100vh;animation-duration:8s;animation-delay:0.5s;"></div>
     <div class="light-beam" style="left:85%;width:85px;height:100vh;animation-duration:7.5s;animation-delay:1.5s;"></div>
 
     <!-- Bottom glow -->
     <div class="bottom-glow"></div>
 
-    <!-- Corner Ornaments (hidden on mobile) -->
+    <!-- Corner Ornaments -->
     <div class="ornament" style="top:20px;left:20px;animation-duration:4s;">
         <svg width="60" height="60" viewBox="0 0 60 60">
             <defs>
@@ -629,56 +484,53 @@
         </svg>
     </div>
 
-    <!-- Gold Particles -->
+    <!-- Gold Particles (generated by JS) -->
     <div id="particleLayer"></div>
 
-    <!-- Marquee Bar -->
-    <div class="marquee-bar">
+    <!-- Running Text -->
+    <div class="ui-content fixed top-0 left-0 right-0 overflow-hidden z-10"
+         style="background:linear-gradient(90deg,rgba(0,0,0,0.85),rgba(20,20,20,0.9),rgba(0,0,0,0.85));backdrop-filter:blur(15px);border-bottom:1px solid rgba(212,175,55,0.4);padding:10px 0;">
         <div class="animate-marquee whitespace-nowrap">
-            <span id="winnerText" class="text-xs font-bold" style="color:#d4af37;font-family:'Cinzel',serif;letter-spacing:0.05em;"></span>
+            <span id="winnerText" class="text-sm font-bold" style="color:#d4af37;font-family:'Cinzel',serif;letter-spacing:0.05em;"></span>
         </div>
     </div>
 
-    <!-- Top Controls (sound + music) -->
-    <div class="top-controls">
-        <button id="soundToggle" class="lbtn-sound ctrl-btn rounded-full">
-            <span id="soundIcon">🔊</span>
-        </button>
-        <button id="musicToggle" class="lbtn-sound ctrl-btn rounded-full">
-            <span id="musicIcon">🎵</span>
-        </button>
-    </div>
+    <!-- Controls -->
+    <button id="soundToggle" class="ui-content lbtn-sound fixed top-16 right-4 p-3 rounded-full z-10 text-xl" style="width:48px;height:48px;">
+        <span id="soundIcon">🔊</span>
+    </button>
+    <button id="musicToggle" class="ui-content lbtn-sound fixed top-32 right-4 p-3 rounded-full z-10 text-xl" style="width:48px;height:48px;">
+        <span id="musicIcon">🎵</span>
+    </button>
 
     <!-- Member Counter -->
-    <div class="member-counter">
-        <div class="luxury-panel-gold px-3 py-2 rounded-xl animate-glow" style="border-radius:14px;">
-            <div class="flex items-center gap-2">
-                <div class="w-2 h-2 rounded-full flex-shrink-0" style="background:#d4af37;box-shadow:0 0 8px rgba(212,175,55,0.9);animation:twinkle 1.5s ease-in-out infinite;"></div>
-                <div style="font-family:'Cinzel',serif;">
-                    <div style="font-size:8px;color:rgba(212,175,55,0.6);letter-spacing:0.1em;line-height:1.2;">PLAYERS</div>
-                    <div style="font-size:16px;color:#f4d03f;font-weight:900;line-height:1.2;" id="memberCount">1,357</div>
-                </div>
+    <div class="ui-content fixed top-16 left-4 luxury-panel-gold px-5 py-3 rounded-2xl z-10 animate-glow">
+        <div class="flex items-center gap-3">
+            <div class="w-3 h-3 rounded-full" style="background:#d4af37;box-shadow:0 0 10px rgba(212,175,55,0.9);animation:twinkle 1.5s ease-in-out infinite;"></div>
+            <div style="font-family:'Cinzel',serif;">
+                <div style="font-size:10px;color:rgba(212,175,55,0.6);letter-spacing:0.15em;">PLAYERS ONLINE</div>
+                <div style="font-size:22px;color:#f4d03f;font-weight:900;" id="memberCount">1,357</div>
             </div>
         </div>
     </div>
 
     <!-- Live Chat -->
-    <button id="liveChatBtn" class="lbtn lbtn-primary live-chat-btn py-2 px-4 rounded-full animate-bounce-chat" style="font-size:12px;">
-        <div class="flex items-center gap-2">
-            <span style="font-size:20px;">💬</span>
-            <span class="text-xs whitespace-nowrap" style="letter-spacing:0.05em;">LIVE CHAT 24/7</span>
+    <button id="liveChatBtn" class="ui-content lbtn lbtn-primary fixed bottom-6 right-6 py-3 px-5 rounded-full z-20 animate-bounce-chat" style="font-size:14px;">
+        <div class="flex flex-col items-center gap-1">
+            <span class="text-2xl">💬</span>
+            <span class="text-xs whitespace-nowrap">LIVE CHAT 24/7</span>
         </div>
     </button>
 
     <!-- App -->
-    <div id="app" class="ui-content min-h-screen flex items-center justify-center" style="z-index:10;"></div>
+    <div id="app" class="ui-content min-h-screen flex items-center justify-center p-4 pt-24 pb-24" style="z-index:10;"></div>
 
     <!-- Prize Modal -->
     <div id="prizeModal" class="hidden fixed inset-0 z-50 overflow-y-auto" style="background:rgba(0,0,0,0.92);backdrop-filter:blur(10px);">
-        <div class="min-h-screen flex items-center justify-center p-3 py-8">
-            <div class="prize-modal-inner luxury-panel-gold rounded-3xl p-5">
-                <div class="text-center mb-5">
-                    <h2 class="font-bold mb-2 gold-text-shimmer" style="font-family:'Cinzel',serif;letter-spacing:0.1em;font-size:clamp(1.2rem,6vw,1.8rem);">
+        <div class="min-h-screen flex items-center justify-center p-4 py-8">
+            <div class="luxury-panel-gold rounded-3xl p-6 md:p-8 max-w-2xl w-full">
+                <div class="text-center mb-6">
+                    <h2 class="text-3xl font-bold mb-2 gold-text-shimmer" style="font-family:'Cinzel',serif;letter-spacing:0.1em;">
                         ✦ DAFTAR HADIAH ✦
                     </h2>
                     <div class="gold-divider">
@@ -686,10 +538,10 @@
                         <span class="symbol">♛</span>
                         <div class="line"></div>
                     </div>
-                    <p style="color:rgba(212,175,55,0.6);font-size:11px;letter-spacing:0.1em;font-family:'Cinzel',serif;">HADIAH BONUS MENANTI ANDA</p>
+                    <p style="color:rgba(212,175,55,0.6);font-size:13px;letter-spacing:0.1em;font-family:'Cinzel',serif;">HADIAH BONUS MENANTI ANDA</p>
                 </div>
-                <div id="prizeList" class="prize-grid mb-5"></div>
-                <button id="closePrizeModal" class="lbtn lbtn-danger w-full py-3 rounded-xl" style="font-size:16px;">✕ TUTUP</button>
+                <div id="prizeList" class="grid grid-cols-2 gap-4 mb-6"></div>
+                <button id="closePrizeModal" class="lbtn lbtn-danger w-full py-4 rounded-xl text-xl">✕ TUTUP</button>
             </div>
         </div>
     </div>
@@ -698,9 +550,7 @@
     // ========== STARFIELD ==========
     (function() {
         const sf = document.getElementById('starfield');
-        const isMobile = window.innerWidth < 480;
-        const count = isMobile ? 40 : 80;
-        for (let i = 0; i < count; i++) {
+        for (let i = 0; i < 80; i++) {
             const s = document.createElement('div');
             s.className = 'star-gold';
             const size = Math.random() * 2 + 0.8;
@@ -730,20 +580,8 @@
         layer.appendChild(p);
         setTimeout(() => p.remove(), (dur + 4) * 1000);
     }
-    const isMobile = window.innerWidth < 480;
-    const initParticles = isMobile ? 8 : 15;
-    for (let i = 0; i < initParticles; i++) setTimeout(() => spawnParticle(), Math.random() * 4000);
-    setInterval(spawnParticle, isMobile ? 1500 : 800);
-
-    // ========== MEMBER COUNTER ANIMATION ==========
-    let currentCount = 1357;
-    function animateCounter() {
-        const delta = Math.floor(Math.random() * 7) - 3;
-        currentCount = Math.max(1200, Math.min(1500, currentCount + delta));
-        const el = document.getElementById('memberCount');
-        if (el) el.textContent = currentCount.toLocaleString('id-ID');
-    }
-    setInterval(animateCounter, 3000);
+    for (let i = 0; i < 15; i++) setTimeout(() => spawnParticle(), Math.random() * 4000);
+    setInterval(spawnParticle, 800);
 
     // ========== ELEGANT MUSIC ==========
     let audioCtx = null, musicPlaying = false, musicTimer = null;
@@ -752,6 +590,8 @@
         return audioCtx;
     }
     const N = { C3:130.81, D3:146.83, E3:164.81, F3:174.61, G3:196, A3:220, B3:246.94, C4:261.63, D4:293.66, E4:329.63, F4:349.23, G4:392, A4:440, B4:493.88, C5:523.25, D5:587.33, E5:659.25, F5:698.46, G5:783.99, A5:880 };
+    
+    // Elegant casino-style melody
     const MELODY = [
         {n:'C5',d:.5},{n:'E5',d:.25},{n:'G5',d:.25},{n:'E5',d:.5},{n:'C5',d:.5},
         {n:'A4',d:.5},{n:'C5',d:.25},{n:'E5',d:.25},{n:'C5',d:1},
@@ -760,6 +600,7 @@
         {n:'E5',d:.25},{n:'D5',d:.25},{n:'C5',d:.25},{n:'B4',d:.25},{n:'A4',d:.5},{n:'G4',d:.5},
         {n:'F4',d:.5},{n:'A4',d:.25},{n:'C5',d:.25},{n:'F5',d:1},
     ];
+    
     function pNote(f,t,dur,type,vol,ctx){ 
         const o=ctx.createOscillator(),g=ctx.createGain(); 
         o.connect(g); g.connect(ctx.destination); 
@@ -780,16 +621,37 @@
             o.start(t); o.stop(t+2.1); 
         }); 
     }
+    
     function scheduleLoop(){
         if(!musicPlaying)return;
         const ctx=getCtx(), bpm=80, beat=60/bpm, start=ctx.currentTime+.05;
         let t=start;
-        MELODY.forEach(note=>{ pNote(N[note.n],t,note.d*beat*.85,'sine',.09,ctx); t+=note.d*beat; });
-        let ht=start; MELODY.forEach(note=>{ pNote(N[note.n]*0.5,ht,note.d*beat*.7,'triangle',.05,ctx); ht+=note.d*beat; });
-        const bass=[{n:'C3',d:2},{n:'A3',d:2},{n:'F3',d:2},{n:'G3',d:2},{n:'C3',d:2},{n:'F3',d:2},{n:'G3',d:1},{n:'C3',d:1}];
-        let bt=start; bass.forEach(note=>{ pNote(N[note.n],bt,note.d*beat*.85,'sine',.06,ctx); bt+=note.d*beat; });
+        // Main melody
+        MELODY.forEach(note=>{ 
+            pNote(N[note.n],t,note.d*beat*.85,'sine',.09,ctx); 
+            t+=note.d*beat; 
+        });
+        // Harmony layer
+        let ht=start; 
+        MELODY.forEach(note=>{ 
+            pNote(N[note.n]*0.5,ht,note.d*beat*.7,'triangle',.05,ctx); 
+            ht+=note.d*beat; 
+        });
+        // Bass line
+        const bass=[
+            {n:'C3',d:2},{n:'A3',d:2},{n:'F3',d:2},{n:'G3',d:2},
+            {n:'C3',d:2},{n:'F3',d:2},{n:'G3',d:1},{n:'C3',d:1}
+        ];
+        let bt=start; 
+        bass.forEach(note=>{ 
+            pNote(N[note.n],bt,note.d*beat*.85,'sine',.06,ctx); 
+            bt+=note.d*beat; 
+        });
+        // Bells on accents
         const totalBeats = MELODY.reduce((s,n)=>s+n.d,0);
-        for(let i=0;i<totalBeats;i+=4){ pBell(N['C5'],start+i*beat,ctx); }
+        for(let i=0;i<totalBeats;i+=4){ 
+            pBell(N['C5'],start+i*beat,ctx); 
+        }
         const loopDur=MELODY.reduce((s,n)=>s+n.d*beat,0);
         musicTimer=setTimeout(scheduleLoop,(loopDur-.3)*1000);
     }
@@ -821,6 +683,7 @@
         if(btn)addRipple(btn,e); 
     });
 
+    // Flying gold elements
     function spawnFly(x, y) {
         const symbols = ['♛','♕','✦','★','♦','◆'];
         const el = document.createElement('div'); 
@@ -830,6 +693,8 @@
         document.body.appendChild(el); 
         el.addEventListener('animationend',()=>el.remove());
     }
+
+    // Ambient flies when music on
     setInterval(() => { 
         if(musicPlaying) spawnFly(Math.random()*window.innerWidth, window.innerHeight*.3+Math.random()*window.innerHeight*.4); 
     }, 1200);
@@ -877,76 +742,80 @@
         }
     }
 
-    // ===== RENDER WELCOME =====
+    // ===== RENDER =====
     function renderWelcome(){
         return `
-        <div class="text-center relative" style="width:100%;max-width:580px;">
-            <div class="luxury-panel-gold rounded-2xl p-4 mb-5 animate-glow" style="padding: clamp(14px,4vw,32px);">
-                <div class="font-bold mb-1" style="color:rgba(212,175,55,0.7);letter-spacing:0.2em;font-family:'Cinzel',serif;font-size:clamp(9px,2.5vw,12px);">✦ KHUSUS AKUN BARU ✦</div>
-                <div class="font-bold welcome-logo gold-text-shimmer" style="font-family:'Cinzel',serif;letter-spacing:0.05em;">AJAIB4D</div>
-                <div class="gold-divider" style="margin:8px 0;">
+        <div class="text-center relative" style="max-width:620px;width:100%;">
+            <!-- Header -->
+            <div class="luxury-panel-gold rounded-3xl p-6 md:p-8 mb-7 animate-glow">
+                <div class="text-xs font-bold mb-2" style="color:rgba(212,175,55,0.7);letter-spacing:0.3em;font-family:'Cinzel',serif;">✦ KHUSUS AKUN BARU ✦</div>
+                <div class="text-5xl md:text-7xl font-bold gold-text-shimmer" style="font-family:'Cinzel',serif;letter-spacing:0.05em;">
+                    AJAIB4D
+                </div>
+                <div class="gold-divider">
                     <div class="line"></div>
                     <span class="symbol">♛</span>
                     <div class="line"></div>
                 </div>
-                <div style="color:rgba(212,175,55,0.55);letter-spacing:0.15em;font-family:'Cinzel',serif;font-size:clamp(8px,2.2vw,11px);">CLAIM BONUS NEW MEMBER</div>
+                <div class="text-xs" style="color:rgba(212,175,55,0.55);letter-spacing:0.25em;font-family:'Cinzel',serif;">CLAIM BONUS NEW MEMBER</div>
             </div>
 
-            <h1 class="font-bold mb-1 welcome-title gold-text-shimmer" style="font-family:'Cinzel',serif;letter-spacing:0.05em;">
+            <!-- Title -->
+            <h1 class="text-4xl md:text-6xl font-bold mb-2 gold-text-shimmer" style="font-family:'Cinzel',serif;letter-spacing:0.05em;">
                 CARDS EXTRA BONUS
             </h1>
-            <div class="gold-divider mb-4">
+            <div class="gold-divider mb-5">
                 <div class="line"></div>
                 <span class="symbol">♦ ◆ ♦</span>
                 <div class="line"></div>
             </div>
 
-            <div class="luxury-panel rounded-xl p-4 mb-5 mx-auto" style="max-width:420px;">
-                <p class="font-medium leading-relaxed welcome-desc-text" style="color:#d4af37;font-family:'Cinzel',serif;letter-spacing:0.04em;">
+            <!-- Description -->
+            <div class="luxury-panel rounded-2xl p-5 mb-7 mx-auto" style="max-width:480px;">
+                <p class="text-lg font-medium leading-relaxed" style="color:#d4af37;font-family:'Cinzel',serif;letter-spacing:0.05em;">
                     🎴 CLAIM BONUS NEW MEMBER AJAIB4D 🎴<br/>
-                    <span class="gold-text-shimmer" style="font-weight:900;">PILIH 1 DARI 6 KARTU MISTERI</span><br/>
-                    <span style="font-size:clamp(10px,3vw,13px);color:rgba(212,175,55,0.55);letter-spacing:0.1em;">Raih Bonus Spektakuler — Buka sekarang!</span>
+                    <span class="gold-text-shimmer" style="font-weight:900;font-size:1.1em;">PILIH 1 DARI 6 KARTU MISTERI</span><br/>
+                    <span style="font-size:13px;color:rgba(212,175,55,0.55);letter-spacing:0.15em;">Raih Bonus Spektakuler — Buka sekarang!</span>
                 </p>
             </div>
 
-            <button id="showPrizesBtn" class="lbtn lbtn-glass py-3 px-8 rounded-full mb-3" style="font-size:clamp(11px,3.5vw,14px);display:inline-block;">
+            <!-- Buttons -->
+            <button id="showPrizesBtn" class="lbtn lbtn-glass py-4 px-10 rounded-full text-base mb-4" style="display:inline-block;">
                 ♛ LIST HADIAH BONUS
             </button>
             <br/>
-            <button id="startBtn" class="lbtn lbtn-primary rounded-full animate-pulse-gold" style="font-size:clamp(13px,4vw,18px);padding:clamp(12px,3vw,20px) clamp(24px,8vw,56px);display:inline-flex;margin-top:8px;">
+            <button id="startBtn" class="lbtn lbtn-primary py-5 px-14 rounded-full text-xl animate-pulse-gold" style="display:inline-block;margin-top:8px;">
                 ✦ CLAIM BONUS DISINI ✦
             </button>
         </div>`;
     }
 
-    // ===== RENDER INPUT =====
     function renderInput(){
         return `
-        <div class="relative" style="width:100%;max-width:400px;">
-            <div class="luxury-panel-gold rounded-2xl p-5 md:p-8">
-                <div class="text-center mb-5">
-                    <div class="mb-2" style="font-size:clamp(28px,10vw,48px);filter:drop-shadow(0 0 10px rgba(212,175,55,0.6));">♛</div>
-                    <h2 class="font-bold mb-1 gold-text-shimmer" style="font-family:'Cinzel',serif;letter-spacing:0.1em;font-size:clamp(1rem,5vw,1.5rem);">VERIFIKASI USER ID</h2>
+        <div class="relative" style="width:100%;max-width:440px;">
+            <div class="luxury-panel-gold rounded-3xl p-8">
+                <div class="text-center mb-6">
+                    <div class="text-4xl mb-2" style="filter:drop-shadow(0 0 10px rgba(212,175,55,0.6));">♛</div>
+                    <h2 class="text-2xl font-bold mb-1 gold-text-shimmer" style="font-family:'Cinzel',serif;letter-spacing:0.1em;">VERIFIKASI USER ID</h2>
                     <div class="gold-divider">
                         <div class="line"></div>
                         <span class="symbol">✦</span>
                         <div class="line"></div>
                     </div>
-                    <p style="color:rgba(212,175,55,0.5);font-size:11px;letter-spacing:0.12em;font-family:'Cinzel',serif;">UNTUK KLAIM HADIAH ANDA</p>
+                    <p style="color:rgba(212,175,55,0.5);font-size:12px;letter-spacing:0.15em;font-family:'Cinzel',serif;">UNTUK KLAIM HADIAH ANDA</p>
                 </div>
                 <input type="text" id="userIdInput" placeholder="Contoh: user_***88"
-                    class="luxury-input w-full px-4 py-4 rounded-xl mb-4 font-bold"
-                    style="width:100%;text-align:center;letter-spacing:0.08em;"
-                    autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
-                <div id="errorMsg" class="hidden px-4 py-3 rounded-lg mb-4 font-bold text-center"
-                     style="background:rgba(120,20,20,0.3);border:1px solid rgba(212,175,55,0.4);color:#d4af37;font-family:'Cinzel',serif;letter-spacing:0.05em;font-size:13px;"></div>
-                <button id="continueBtn" class="lbtn lbtn-primary w-full py-4 rounded-xl" style="font-size:clamp(13px,4vw,17px);">✦ LANJUTKAN</button>
+                    class="luxury-input w-full px-5 py-4 rounded-xl mb-4 text-lg font-bold"
+                    style="width:100%;text-align:center;letter-spacing:0.1em;">
+                <div id="errorMsg" class="hidden px-4 py-3 rounded-lg mb-4 text-sm font-bold text-center"
+                     style="background:rgba(120,20,20,0.3);border:1px solid rgba(212,175,55,0.4);color:#d4af37;font-family:'Cinzel',serif;letter-spacing:0.05em;"></div>
+                <button id="continueBtn" class="lbtn lbtn-primary w-full py-4 rounded-xl text-lg">✦ LANJUTKAN</button>
             </div>
         </div>`;
     }
 
-    // ===== RENDER CARD SELECTION =====
     function renderCardSelection(){
+        // 6 cards in a 3x2 grid
         let cards='';
         for(let i=0;i<6;i++){
             cards+=`
@@ -969,71 +838,64 @@
         }
         return `
         <div class="text-center relative" style="width:100%;">
-            <div class="luxury-panel-gold rounded-xl p-4 mb-5 inline-block" style="max-width:95vw;">
-                <h2 class="font-bold gold-text-shimmer" style="font-family:'Cinzel',serif;letter-spacing:0.06em;font-size:clamp(0.85rem,4.5vw,1.4rem);">
-                    ♛ PILIH 1 KARTU CLAIM BONUS ♛
+            <div class="luxury-panel-gold rounded-2xl p-5 mb-7 inline-block">
+                <h2 class="text-xl md:text-2xl font-bold gold-text-shimmer" style="font-family:'Cinzel',serif;letter-spacing:0.1em;">
+                    ♛ PILIH 1 KARTU UNTUK CLAIM BONUS ♛
                 </h2>
                 <div class="gold-divider">
                     <div class="line"></div>
                     <span class="symbol">♦</span>
                     <div class="line"></div>
                 </div>
-                <p style="color:rgba(212,175,55,0.55);font-size:clamp(9px,2.5vw,11px);letter-spacing:0.15em;font-family:'Cinzel',serif;">HADIAH DARI 100 RB SAMPAI 1 JUTAAN</p>
+                <p style="color:rgba(212,175,55,0.55);font-size:11px;letter-spacing:0.2em;font-family:'Cinzel',serif;">HADIAH DARI 100 RB SAMPAI 1 JUTAAN</p>
             </div>
-            <div class="card-grid">${cards}</div>
-            <div class="mt-4" style="color:rgba(212,175,55,0.5);letter-spacing:0.15em;font-family:'Cinzel',serif;font-size:clamp(8px,2.5vw,11px);">
+            <div class="grid grid-cols-3 gap-3 md:gap-5 mx-auto" style="max-width:560px;">${cards}</div>
+            <div class="mt-6 text-xs" style="color:rgba(212,175,55,0.5);letter-spacing:0.2em;font-family:'Cinzel',serif;">
                 ✦ EVENT TERBATAS KHUSUS PENGGUNA BARU ✦
             </div>
         </div>`;
     }
 
-    // ===== RENDER RESULT =====
     function renderResult(prize){
         const uid=localStorage.getItem("USER_ID_TK")||"Unknown";
         return `
-        <div class="relative" style="width:100%;max-width:400px;">
-            <div class="luxury-panel-gold rounded-2xl p-5 md:p-8 text-center">
-                <div class="inline-block rounded-xl font-bold px-3 py-2 mb-4"
-                     style="background:rgba(0,0,0,0.6);border:1px solid rgba(212,175,55,0.5);color:#d4af37;backdrop-filter:blur(10px);font-family:'Cinzel',serif;letter-spacing:0.08em;font-size:11px;">
+        <div class="relative" style="width:100%;max-width:440px;">
+            <div class="luxury-panel-gold rounded-3xl p-8 md:p-10 text-center">
+                <div class="absolute top-4 left-4 rounded-xl font-bold px-3 py-2 text-xs"
+                     style="background:rgba(0,0,0,0.6);border:1px solid rgba(212,175,55,0.5);color:#d4af37;backdrop-filter:blur(10px);font-family:'Cinzel',serif;letter-spacing:0.1em;">
                     ID: ${uid}
                 </div>
-                <div style="font-size:clamp(40px,15vw,64px);margin-bottom:12px;animation:pulse-gold 1.2s ease-in-out infinite;filter:drop-shadow(0 0 15px rgba(212,175,55,0.8));">${prize.icon}</div>
-                <div class="font-bold mb-1" style="color:#d4af37;font-family:'Cinzel',serif;letter-spacing:0.15em;font-size:clamp(11px,3.5vw,16px);">CONGRATULATIONS!</div>
-                <h2 class="font-bold mb-3 gold-text-shimmer" style="font-family:'Cinzel',serif;letter-spacing:0.05em;font-size:clamp(1.6rem,8vw,2.5rem);">SELAMAT! ✦</h2>
-                <div class="gold-divider mb-3">
+                <div class="text-6xl mb-4 mt-8" style="animation:pulse-gold 1.2s ease-in-out infinite;filter:drop-shadow(0 0 15px rgba(212,175,55,0.8));">${prize.icon}</div>
+                <div class="text-xl mb-1" style="color:#d4af37;font-family:'Cinzel',serif;letter-spacing:0.2em;">CONGRATULATIONS!</div>
+                <h2 class="text-4xl font-bold mb-3 gold-text-shimmer" style="font-family:'Cinzel',serif;letter-spacing:0.05em;">SELAMAT! ✦</h2>
+                <div class="gold-divider mb-4">
                     <div class="line"></div>
                     <span class="symbol">♛</span>
                     <div class="line"></div>
                 </div>
-                <p class="mb-3" style="color:rgba(212,175,55,0.7);font-family:'Cinzel',serif;letter-spacing:0.08em;font-size:clamp(11px,3.5vw,14px);">ANDA MEMENANGKAN:</p>
-                <div class="rounded-xl mb-4 py-5 px-4" style="background:linear-gradient(135deg,rgba(212,175,55,0.25),rgba(0,0,0,0.7));border:1px solid rgba(212,175,55,0.6);box-shadow:0 0 30px rgba(212,175,55,0.3),inset 0 1px 0 rgba(244,208,63,0.3);">
-                    <p class="font-bold result-prize-value gold-text-shimmer" style="font-family:'Cinzel',serif;letter-spacing:0.05em;">${prize.value}</p>
+                <p class="text-base mb-4" style="color:rgba(212,175,55,0.7);font-family:'Cinzel',serif;letter-spacing:0.1em;">ANDA MEMENANGKAN:</p>
+                <div class="rounded-2xl mb-5 py-6 px-6" style="background:linear-gradient(135deg,rgba(212,175,55,0.25),rgba(0,0,0,0.7));border:1px solid rgba(212,175,55,0.6);box-shadow:0 0 30px rgba(212,175,55,0.3),inset 0 1px 0 rgba(244,208,63,0.3);">
+                    <p class="text-3xl font-bold gold-text-shimmer" style="font-family:'Cinzel',serif;letter-spacing:0.05em;">${prize.value}</p>
                 </div>
-                <p class="mb-4" style="color:rgba(212,175,55,0.5);letter-spacing:0.15em;font-family:'Cinzel',serif;font-size:clamp(9px,2.5vw,12px);">♛ LUCKY WINNER ♛</p>
-                <button id="claimBtn" class="lbtn lbtn-primary w-full py-4 rounded-xl mb-3" style="font-size:clamp(13px,4vw,17px);">✦ KLAIM HADIAH SEKARANG</button>
-                <button id="resetBtn" class="lbtn lbtn-glass w-full py-3 rounded-xl" style="font-size:clamp(11px,3.5vw,14px);">♻ KEMBALI KE BERANDA</button>
+                <p class="text-xs mb-5" style="color:rgba(212,175,55,0.5);letter-spacing:0.2em;font-family:'Cinzel',serif;">♛ LUCKY WINNER ♛</p>
+                <button id="claimBtn" class="lbtn lbtn-primary w-full py-4 rounded-xl text-lg mb-3">✦ KLAIM HADIAH SEKARANG</button>
+                <button id="resetBtn" class="lbtn lbtn-glass w-full py-3 rounded-xl text-sm">♻ KEMBALI KE BERANDA</button>
             </div>
         </div>`;
     }
 
-    // ===== RENDER =====
     function render(){
         const app=document.getElementById('app');
         if(stage==='welcome'){
             app.innerHTML=renderWelcome();
             document.getElementById('startBtn').onclick=e=>{ 
                 playSound('click'); 
-                spawnFly(e.clientX||window.innerWidth/2, e.clientY||window.innerHeight/2); 
+                spawnFly(e.clientX,e.clientY); 
                 stage='input'; render(); 
             };
             document.getElementById('showPrizesBtn').onclick=e=>{ playSound('click'); showPrizeModal(); };
         } else if(stage==='input'){
             app.innerHTML=renderInput();
-            // Focus input after a brief delay on mobile to prevent keyboard issues
-            setTimeout(() => {
-                const inp = document.getElementById('userIdInput');
-                if (inp && window.innerWidth >= 480) inp.focus();
-            }, 300);
             document.getElementById('continueBtn').onclick=e=>{
                 playSound('click');
                 const v=document.getElementById('userIdInput').value.trim();
@@ -1045,28 +907,30 @@
                 claimedUsers.push(n); localStorage.setItem("CLAIMED_USERS_TK",JSON.stringify(claimedUsers));
                 stage='select'; render();
             };
+            // Enter key support
             document.getElementById('userIdInput').addEventListener('keypress', e => {
-                if (e.key === 'Enter') {
-                    e.preventDefault();
-                    document.getElementById('continueBtn').click();
-                }
+                if (e.key === 'Enter') document.getElementById('continueBtn').click();
             });
         } else if(stage==='select'){
             app.innerHTML=renderCardSelection();
+            
+            // Saldo prizes that can be won
             const rp=[
-                {name:'Saldo 100rb',value:'Rp 100.000',icon:'💸'},
-                {name:'Saldo 250rb',value:'Rp 250.000',icon:'💸'},
+                {name:'Saldo 1 Juta',value:'Rp 1.000.000',icon:'💸'},
+                {name:'Saldo 500rb',value:'Rp 500.000',icon:'💸'},
                 {name:'Saldo 500rb',value:'Rp 500.000',icon:'💸'},
                 {name:'Saldo 1 Juta',value:'Rp 1.000.000',icon:'💸'}
             ];
+            
             document.querySelectorAll('.card-container').forEach((card)=>{
                 card.onclick=function(e){
                     if (this.dataset.flipped === 'true') return;
+                    
                     playSound('flip');
-                    const cx = e.clientX || (this.getBoundingClientRect().left + this.offsetWidth/2);
-                    const cy = e.clientY || (this.getBoundingClientRect().top + this.offsetHeight/2);
-                    spawnFly(cx-15,cy-10); 
-                    spawnFly(cx+15,cy-15);
+                    spawnFly(e.clientX-15,e.clientY-10); 
+                    spawnFly(e.clientX+15,e.clientY-15);
+                    
+                    // Disable all other cards
                     document.querySelectorAll('.card-container').forEach(c=>{
                         if (c !== this) {
                             c.style.pointerEvents = 'none';
@@ -1074,22 +938,35 @@
                             c.style.transition = 'opacity 0.5s';
                         }
                     });
+                    
+                    // Pick a random prize
                     const prize = rp[Math.floor(Math.random()*rp.length)];
+                    
+                    // Update card front content
                     const frontContent = this.querySelector('.card-content');
                     frontContent.querySelector('.icon').textContent = prize.icon;
                     frontContent.querySelector('.label').textContent = prize.value;
+                    
+                    // Flip the card
                     const flipper = this.querySelector('.card-flipper');
                     flipper.classList.add('flipped');
                     this.dataset.flipped = 'true';
-                    setTimeout(() => { flipper.classList.add('winner-card'); }, 800);
+                    
+                    // Add winner animation after flip
+                    setTimeout(() => {
+                        flipper.classList.add('winner-card');
+                    }, 800);
+                    
                     setTimeout(()=>{
                         playSound('win');
+                        // Burst of gold particles
                         for(let i=0;i<10;i++){
                             setTimeout(()=>{
-                                spawnFly(cx+(Math.random()*100-50),cy+(Math.random()*100-50));
+                                spawnFly(e.clientX+(Math.random()*100-50),e.clientY+(Math.random()*100-50));
                             }, i*60);
                         }
                     },1200);
+                    
                     setTimeout(()=>{
                         stage='result'; 
                         app.innerHTML=renderResult(prize);
@@ -1109,16 +986,14 @@
 
     function showPrizeModal(){
         document.getElementById('prizeList').innerHTML=prizes.map(p=>`
-            <div class="luxury-panel rounded-xl p-3 text-center" style="border-color:rgba(212,175,55,0.3);">
-                <div class="mb-1" style="font-size:clamp(24px,8vw,36px);filter:drop-shadow(0 0 8px rgba(212,175,55,0.5));">${p.icon}</div>
-                <h3 class="font-bold mb-1" style="color:#d4af37;font-family:'Cinzel',serif;letter-spacing:0.04em;font-size:clamp(10px,3vw,13px);">${p.name}</h3>
-                <div class="rounded-lg py-2 px-2" style="background:rgba(0,0,0,0.6);border:1px solid rgba(212,175,55,0.2);">
-                    <p class="font-bold gold-text-shimmer" style="font-family:'Cinzel',serif;font-size:clamp(11px,3.5vw,15px);">${p.value}</p>
+            <div class="luxury-panel rounded-2xl p-4 text-center" style="border-color:rgba(212,175,55,0.3);">
+                <div class="text-4xl mb-2" style="filter:drop-shadow(0 0 8px rgba(212,175,55,0.5));">${p.icon}</div>
+                <h3 class="text-sm font-bold mb-2" style="color:#d4af37;font-family:'Cinzel',serif;letter-spacing:0.05em;">${p.name}</h3>
+                <div class="rounded-lg py-2 px-3" style="background:rgba(0,0,0,0.6);border:1px solid rgba(212,175,55,0.2);">
+                    <p class="text-base font-bold gold-text-shimmer" style="font-family:'Cinzel',serif;">${p.value}</p>
                 </div>
             </div>`).join('');
         document.getElementById('prizeModal').classList.remove('hidden');
-        // Prevent body scroll when modal open
-        document.body.style.overflow = 'hidden';
     }
 
     document.getElementById('soundToggle').onclick=()=>{ 
@@ -1127,11 +1002,7 @@
     };
     document.getElementById('musicToggle').onclick=e=>{ 
         if(musicPlaying){stopMusic();}
-        else{
-            startMusic();
-            const x=e.clientX||window.innerWidth-30, y=e.clientY||80;
-            spawnFly(x-10,y-10); spawnFly(x+10,y-20);
-        } 
+        else{startMusic();spawnFly(e.clientX-10,e.clientY-10);spawnFly(e.clientX+10,e.clientY-20);} 
     };
     document.getElementById('liveChatBtn').onclick=()=>{ 
         playSound('click'); 
@@ -1139,16 +1010,8 @@
     };
     document.getElementById('closePrizeModal').onclick=()=>{ 
         playSound('click'); 
-        document.getElementById('prizeModal').classList.add('hidden');
-        document.body.style.overflow = '';
+        document.getElementById('prizeModal').classList.add('hidden'); 
     };
-    // Close modal on backdrop tap (mobile)
-    document.getElementById('prizeModal').addEventListener('click', function(e) {
-        if (e.target === this) {
-            this.classList.add('hidden');
-            document.body.style.overflow = '';
-        }
-    });
 
     updateWinnerText();
     setInterval(updateWinnerText,12000);
